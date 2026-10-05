@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title description">
+  <title id="title">Conceptual regulatory modules</title>
+  <desc id="description">Three interconnected groups of gene-like nodes accompany a small abstract data matrix. This conceptual illustration does not show measured results or an inferred biological network.</desc>
+  <rect width="960" height="560" fill="#181d1e"/>
+  <g fill="none" stroke="#eff1ec" stroke-opacity=".08" stroke-width="1">
+    <path d="M64 88H896M64 478H896M64 104V464M896 104V464"/>
+  </g>
+  <g fill="none" stroke-width="1.5" stroke-dasharray="3 9">
+    <ellipse cx="254" cy="231" rx="119" ry="99" transform="rotate(-15 254 231)" stroke="#80d7cd" stroke-opacity=".28"/>
+    <ellipse cx="465" cy="349" rx="118" ry="95" transform="rotate(12 465 349)" stroke="#d9b884" stroke-opacity=".28"/>
+    <ellipse cx="613" cy="196" rx="108" ry="89" transform="rotate(-9 613 196)" stroke="#b6a5d5" stroke-opacity=".28"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-width="2">
+    <path d="M203 194 263 225 229 287 203 194 307 166 263 225 329 260 229 287M307 166 329 260" stroke="#80d7cd" stroke-opacity=".40"/>
+    <path d="M397 327 461 355 466 294 397 327 422 402 461 355 525 379 466 294M422 402 525 379" stroke="#d9b884" stroke-opacity=".40"/>
+    <path d="M551 189 610 216 597 147 551 189 575 258 610 216 661 169 597 147M610 216 681 225 661 169M575 258 681 225" stroke="#b6a5d5" stroke-opacity=".40"/>
+    <path d="M329 260C365 273 359 301 397 327M307 166C390 103 491 137 551 189M525 379C593 362 595 301 575 258M263 225C336 182 409 192 466 294" stroke="#eff1ec" stroke-opacity=".20"/>
+    <path d="M691 292C720 299 728 331 746 337" stroke="#eff1ec" stroke-opacity=".17" stroke-dasharray="3 7"/>
+  </g>
+  <g fill="#80d7cd" stroke="#181d1e" stroke-width="5">
+    <circle cx="203" cy="194" r="13"/><circle cx="263" cy="225" r="20"/><circle cx="307" cy="166" r="12"/><circle cx="329" cy="260" r="14"/><circle cx="229" cy="287" r="11"/>
+  </g>
+  <g fill="#d9b884" stroke="#181d1e" stroke-width="5">
+    <circle cx="397" cy="327" r="13"/><circle cx="461" cy="355" r="20"/><circle cx="466" cy="294" r="12"/><circle cx="422" cy="402" r="11"/><circle cx="525" cy="379" r="14"/>
+  </g>
+  <g fill="#b6a5d5" stroke="#181d1e" stroke-width="5">
+    <circle cx="551" cy="189" r="13"/><circle cx="610" cy="216" r="20"/><circle cx="597" cy="147" r="12"/><circle cx="575" cy="258" r="11"/><circle cx="661" cy="169" r="12"/><circle cx="681" cy="225" r="13"/>
+  </g>
+  <g fill="#181d1e" fill-opacity=".65">
+    <circle cx="263" cy="225" r="5"/><circle cx="461" cy="355" r="5"/><circle cx="610" cy="216" r="5"/>
+  </g>
+  <g font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#c1c8c4" font-size="24">
+    <text x="133" y="363">Module 01</text>
+    <text x="403" y="460">Module 02</text>
+    <text x="566" y="94">Module 03</text>
+  </g>
+  <g transform="translate(756 296)">
+    <g fill="none" stroke="#eff1ec" stroke-opacity=".15" stroke-width="1">
+      <path d="M0 0H112M0 28H112M0 56H112M0 84H112M0 112H112M0 140H112M0 0V140M28 0V140M56 0V140M84 0V140M112 0V140"/>
+    </g>
+    <g fill="#80d7cd">
+      <rect x="5" y="5" width="18" height="18" rx="2" opacity=".55"/><rect x="33" y="5" width="18" height="18" rx="2" opacity=".24"/><rect x="5" y="33" width="18" height="18" rx="2" opacity=".30"/><rect x="61" y="33" width="18" height="18" rx="2" opacity=".50"/>
+    </g>
+    <g fill="#d9b884">
+      <rect x="33" y="61" width="18" height="18" rx="2" opacity=".45"/><rect x="89" y="61" width="18" height="18" rx="2" opacity=".22"/>
+    </g>
+    <g fill="#b6a5d5">
+      <rect x="61" y="89" width="18" height="18" rx="2" opacity=".40"/><rect x="89" y="89" width="18" height="18" rx="2" opacity=".25"/><rect x="33" y="117" width="18" height="18" rx="2" opacity=".22"/><rect x="89" y="117" width="18" height="18" rx="2" opacity=".48"/>
+    </g>
+  </g>
+</svg>

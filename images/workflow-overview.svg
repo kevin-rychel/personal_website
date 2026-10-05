@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title description">
+  <title id="title">Conceptual analysis workflow</title>
+  <desc id="description">A schematic path from DAWN guided workflows through a visual checkpoint to DUSK cohort insights. The marks are illustrative and do not represent data or a software interface.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M2 2 8 6 2 10" fill="none" stroke="#80d7cd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="960" height="560" fill="#181d1e"/>
+  <g fill="none" stroke="#eff1ec" stroke-opacity=".08" stroke-width="1">
+    <path d="M64 88H896M64 478H896"/>
+    <path d="M64 104V464M896 104V464"/>
+  </g>
+  <g font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="76" y="158" fill="#eff1ec" font-size="36" font-weight="600" letter-spacing="1">DAWN</text>
+    <text x="636" y="158" fill="#eff1ec" font-size="36" font-weight="600" letter-spacing="1">DUSK</text>
+    <text x="76" y="448" fill="#c1c8c4" font-size="26">Guided workflows</text>
+    <text x="636" y="448" fill="#c1c8c4" font-size="26">Cohort insights</text>
+    <text x="490" y="212" fill="#c1c8c4" font-size="24" text-anchor="middle">Visual checkpoint</text>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M119 243C150 243 142 297 177 297M119 297H177M119 351C150 351 142 297 177 297" stroke="#80d7cd" stroke-opacity=".46" stroke-width="2"/>
+    <path d="M245 297H291M359 297H443M538 297H607" stroke="#80d7cd" stroke-opacity=".65" stroke-width="2" marker-end="url(#arrow)"/>
+    <circle cx="211" cy="297" r="34" stroke="#80d7cd" stroke-opacity=".65" stroke-width="2"/>
+    <circle cx="325" cy="297" r="34" stroke="#80d7cd" stroke-opacity=".65" stroke-width="2"/>
+    <circle cx="490" cy="297" r="43" stroke="#d9b884" stroke-opacity=".75" stroke-width="2"/>
+    <path d="m197 297 10 10 19-21M311 297l10 10 19-21" stroke="#80d7cd" stroke-width="3"/>
+    <circle cx="486" cy="293" r="15" stroke="#d9b884" stroke-width="2.5"/>
+    <path d="m497 305 13 13" stroke="#d9b884" stroke-width="2.5"/>
+    <path d="M650 245H872M650 297H872M650 349H872" stroke="#eff1ec" stroke-opacity=".12" stroke-width="1"/>
+    <path d="M677 218V374M762 218V374M847 218V374" stroke="#eff1ec" stroke-opacity=".10" stroke-width="1"/>
+  </g>
+  <g fill="#80d7cd">
+    <circle cx="109" cy="243" r="9"/><circle cx="109" cy="297" r="9"/><circle cx="109" cy="351" r="9"/>
+    <circle cx="670" cy="280" r="7"/><circle cx="684" cy="263" r="7"/><circle cx="683" cy="310" r="7"/><circle cx="665" cy="326" r="7"/><circle cx="680" cy="343" r="7"/>
+  </g>
+  <g fill="#d9b884">
+    <circle cx="754" cy="241" r="7"/><circle cx="770" cy="257" r="7"/><circle cx="754" cy="278" r="7"/><circle cx="766" cy="297" r="7"/><circle cx="751" cy="317" r="7"/>
+  </g>
+  <g fill="#b6a5d5">
+    <circle cx="839" cy="274" r="7"/><circle cx="854" cy="291" r="7"/><circle cx="837" cy="310" r="7"/><circle cx="854" cy="330" r="7"/><circle cx="842" cy="353" r="7"/>
+  </g>
+  <g fill="#eff1ec" fill-opacity=".25">
+    <circle cx="211" cy="363" r="3"/><circle cx="325" cy="363" r="3"/><circle cx="490" cy="363" r="3"/>
+  </g>
+</svg>

@@ -10,10 +10,12 @@
 
 ## Current repository
 
-- Static GitHub Pages site: `index.html`, `images/`, `favicon.ico`, and two linked teaching-evaluation PDFs.
+- Static GitHub Pages site: `index.html`, `styles.css`, `analytics.js`, `images/`, `new_images/`, `resume.pdf`, `favicon.ico`, and two preserved teaching-evaluation PDFs.
 - No package manager, lockfile, build step, or automated test suite exists yet.
 - `CNAME` contains `kevinrychel.com`; preserve it and important existing links during updates.
-- Existing HTML loads Bootstrap 5.3 alpha CSS/JS, Font Awesome, Google Fonts, and Google Analytics externally. Inspect usage before removing or replacing these dependencies.
+- The landing-page draft replaces the inspected legacy Bootstrap, Font Awesome, and Google Fonts dependencies with plain CSS, system fonts, and original SVG diagrams. Existing Google Analytics runs only on the public hostname; local previews do not load it.
+- Kevin approved the supplied colorectal carcinoma image for local drafting. Confirm reuse permission and final credit before publication; conceptual SVGs must remain labeled as illustrations.
+- Kevin selected the Singular-labelled PDF in the private sibling folder as the public résumé. Copy only that approved PDF into `resume.pdf`; keep private source and career notes outside this repository.
 - The GitHub Pages publishing source is an account setting and has not been verified from repository files. Do not assume that pushing a branch is safe from automatic deployment.
 
 ## Development workflow
