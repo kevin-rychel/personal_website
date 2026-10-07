@@ -6,7 +6,7 @@ We should design the site to look great on both cell phones and monitors. Pages 
 
 I would like navigation to be engaging and deliberate. On the landing page, we should see my face and some element of immunofluorescent imaging (maybe the colorectal carcinoma image that my SelectScience webinar was about -- possibly as a striped banner, full page background, or something else), with the main general links (email, linkedin, scholar), and also the top level page content links: Work and Research Experience, Publications, About Me, Molecules (Maybe? see bullet below).
 
-Note that I've added the two initial landing page images in the new_images/ dir.
+The landing-page image exports are now organized by family in `images/`, with full-resolution originals kept locally in the ignored `images/masters/` folder.
 
 One thing potentially missing is what I'm looking for. However I want to be careful in case someone from work stumbles on this site. I could potentially described my dream job using vague wording that doesn't necessarily suggest that I'm actively looking for a new job, and is of course also general enough to appeal to all potential employers.
 
@@ -49,4 +49,3 @@ Here's a few page ideas I have:
     - Story includes my initial inspiration from my Mom's MS, link to my graduation story that describes the tumultuous experience I had in 2023 (multiple deaths close to me right before defending)
     - Brief photo gallery of fun travel photos to show my adventurous side -- if it sounds like a good idea (e.g. bungie jumping in New Zealand, cool hiking locations, etc.)
     - Existing website has a nice blurb mentioning LGBT identity and stuff like that, worth updating.
-

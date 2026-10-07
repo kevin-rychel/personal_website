@@ -25,7 +25,7 @@ enum ExportError: Error, CustomStringConvertible {
     }
 }
 
-let destination = URL(fileURLWithPath: "new_images", isDirectory: true)
+let destination = URL(fileURLWithPath: "images", isDirectory: true)
 let microscopyExports = [
     // Lower mixed carcinoma: orange epithelium, blue tissue, and yellow cells.
     Export(name: "crc-banner", crop: CGRect(x: 8400, y: 5800, width: 9600, height: 1600),
@@ -58,6 +58,8 @@ func export(sourcePath: String, variants: [Export]) throws {
         guard bounds.contains(variant.crop), let cropped = original.cropping(to: variant.crop) else {
             throw ExportError.failure("Crop outside source: \(variant.name)")
         }
+        let familyDestination = destination.appendingPathComponent(variant.name, isDirectory: true)
+        try FileManager.default.createDirectory(at: familyDestination, withIntermediateDirectories: true)
         for width in variant.widths {
             try autoreleasepool {
                 let roundedHeight = Int((Double(width) * variant.crop.height / variant.crop.width).rounded())
@@ -89,7 +91,7 @@ func export(sourcePath: String, variants: [Export]) throws {
                     ("public.jpeg", "jpg", variant.quality),
                     ("public.avif", "avif", 0.68)
                 ] {
-                    let output = destination.appendingPathComponent("\(variant.name)-\(width).\(suffix)")
+                    let output = familyDestination.appendingPathComponent("\(variant.name)-\(width).\(suffix)")
                     guard let encoder = CGImageDestinationCreateWithURL(output as CFURL,
                                           type as CFString, 1, nil) else {
                         throw ExportError.failure("Cannot write \(suffix): \(output.path)")
@@ -141,12 +143,12 @@ do {
     let portraits = microscopyOnly ? [] : portraitExports.filter { family == nil || $0.name == family }
     if !microscopy.isEmpty {
         try autoreleasepool {
-            try export(sourcePath: "new_images/hd_colorectal_carcinoma.png", variants: microscopy)
+            try export(sourcePath: "images/masters/hd_colorectal_carcinoma.png", variants: microscopy)
         }
     }
     if !portraits.isEmpty {
         try autoreleasepool {
-            try export(sourcePath: "new_images/hd_kevinrychelpenn_dec2025_headshot.jpg", variants: portraits)
+            try export(sourcePath: "images/masters/hd_kevinrychelpenn_dec2025_headshot.jpg", variants: portraits)
         }
     }
 } catch {

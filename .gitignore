@@ -4,5 +4,4 @@
 !.env.example
 
 # Full-resolution local image masters; commit optimized web crops instead.
-/new_images/hd_colorectal_carcinoma.png
-/new_images/hd_kevinrychelpenn_dec2025_headshot.jpg
+/images/masters/

@@ -49,7 +49,7 @@ I’m Kevin, a PhD bioengineer working across spatial biology and multi-omics. I
 
 **Primary button:** [Get in touch](mailto:kevinrychelpenn@gmail.com)
 
-**Résumé link:** [Résumé](resume.pdf) — small suffix: PDF
+**Résumé link:** [Résumé](../resume.pdf) — small suffix: PDF (website path: `resume.pdf`)
 
 **Profile links:**
 

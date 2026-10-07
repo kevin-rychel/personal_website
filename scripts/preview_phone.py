@@ -21,20 +21,15 @@ PUBLIC_FILES = frozenset({
     "favicon.ico",
     "favicon.svg",
     "resume.pdf",
-    "new_images/colorectal_carcinoma.jpeg",
-    "new_images/kevin_headshot.jpeg",
     "images/workflow-overview.svg",
     "images/regulatory-modules.svg",
-    "Rychel_Kevin_Student_IA_Evaluation_WI20.pdf",
-    "Rychel_Kevin_Student_IA_Evaluation_WI21.pdf",
     *{
-        "new_images/{}-{}.{}".format(family, width, suffix)
+        "images/{0}/{0}-{1}.{2}".format(family, width, suffix)
         for family, widths in (
             ("crc-banner", (800, 1600, 2400)),
             ("crc-banner-mobile", (640, 1280)),
             ("crc-work-banner", (800, 1600, 2400)),
             ("crc-work-banner-mobile", (640, 1280)),
-            ("crc-detail", (480, 960, 1440)),
             ("kevin-portrait", (400, 800, 1200)),
         )
         for width in widths

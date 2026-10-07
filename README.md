@@ -3,53 +3,45 @@ This is the source code for KevinRychel.com, Kevin Rychel-Penn’s professional 
 
 Visit the site at [KevinRychel.com](https://www.kevinrychel.com)
 
-## Local development
+## Preview on Mac and iPhone
 
 This is a static HTML/CSS site. No Node installation, package manager, or build step is required. The page works without JavaScript; the small analytics script runs only on the existing public domain.
 
-From the repository root, start a local server:
-
-```sh
-python3 -m http.server 8000 --bind 127.0.0.1
-```
-
-Open <http://127.0.0.1:8000> in your browser. Refresh after saving changes, and press Control+C in the terminal to stop the server. This previews the page; it does not reproduce GitHub Pages processing or verify deployment settings.
-
-In current VS Code, **Command Palette → Browser: Open Integrated Browser** can display the same address beside the code. A desktop browser also works.
-
-### iPhone preview over Wi-Fi
-
-In VS Code, use **Terminal → Run Task → Preview on iPhone**, or run:
+Use one preview server for both devices. In VS Code, choose **Terminal → Run Task → Preview on iPhone**, or run this from the repository root:
 
 ```sh
 python3 scripts/preview_phone.py
 ```
 
-The script uses the Mac’s current Wi-Fi IPv4 address on `en0` and prints a URL such as `http://192.168.1.69:8001/`. Open that exact URL in Safari on an iPhone connected to the same Wi-Fi. Keep the Mac awake and the terminal running. This uses the existing Python installation and Safari; no app or additional dependency is required.
+Open the printed URL in your Mac’s browser or in Safari on an iPhone connected to the same Wi-Fi. The current network address is <http://192.168.1.69:8001/>; it can change after switching networks or routers. Restart the script to get the new address. Keep the Mac awake and the terminal running, refresh after saving changes, and stop with Control+C.
 
-The preview serves a temporary copy of an explicit list of public assets. It excludes Git files, Markdown notes, private sibling folders, and both full-resolution image masters. Saved HTML/CSS changes appear when you refresh Safari; there is no automatic browser reload. Editing `COPY_REVIEW.md` still requires applying those edits to the HTML first. Add future web assets to `PUBLIC_FILES` in the script, then restart the preview to load that list. Control+C stops the server and removes the temporary copy. The server handles concurrent browser connections and replaces copied assets atomically.
+The preview serves only explicitly listed website assets, excluding Git files, `notes/`, `archive/`, private sibling folders, and full-resolution image masters. Add future web assets to `PUBLIC_FILES` in the script and restart it. There is no automatic browser reload; edits to `notes/COPY_REVIEW.md` still need to be applied manually to the HTML. This preview does not reproduce GitHub Pages processing or verify deployment settings.
 
-If address detection fails or Wi-Fi uses a different interface, find the Mac’s address in **System Settings → Wi-Fi → Details → TCP/IP**, then run:
+For an optional Mac-only preview without Wi-Fi, use the same script:
 
 ```sh
-python3 scripts/preview_phone.py --bind YOUR_LAN_IP
+python3 scripts/preview_phone.py --bind 127.0.0.1
 ```
 
-The existing desktop preview on port 8000 can stay running. `127.0.0.1` is local to each device, so use the printed LAN address for the phone. If Safari cannot connect, check that both devices are on the same non-guest Wi-Fi, accept a macOS incoming-network prompt if shown, and check whether a VPN or firewall blocks local connections. If port 8001 is occupied, pass `--port 8002`.
+Open <http://127.0.0.1:8001/> on the Mac; this address cannot be used from the phone. You do not need a separate localhost server for the usual Wi-Fi workflow.
+
+If Wi-Fi address detection fails, find the Mac’s address in **System Settings → Wi-Fi → Details → TCP/IP** and pass `--bind YOUR_LAN_IP`. If Safari cannot connect, check that both devices use the same non-guest Wi-Fi and that a VPN or firewall is not blocking local connections; accept a macOS incoming-network prompt if shown. If the port is occupied, pass `--port 8002`.
 
 ## Project structure
 
 - `index.html`: semantic page markup and curated publication links.
 - `styles.css`: responsive layouts, shared design tokens, and focus styles.
 - `analytics.js`: existing Google Analytics ID, disabled on local previews.
-- `new_images/`: responsive microscopy crops and portrait exports, plus preserved small originals. Full-resolution masters are local and excluded from Git.
-- `images/`: original conceptual SVGs and preserved legacy research assets.
+- `images/`: the two conceptual SVGs and responsive exports grouped by family: `crc-banner/`, `crc-banner-mobile/`, `crc-work-banner/`, `crc-work-banner-mobile/`, and `kevin-portrait/`. For example, `images/crc-banner/crc-banner-800.avif`.
+- `images/masters/`: full-resolution local originals, ignored by Git and excluded from the preview.
+- `archive/`: tracked historical images, logos, the original favicon, and teaching PDFs, with their previous locations documented in `archive/README.md`. The phone preview excludes this directory.
 - `resume.pdf`: the public résumé selected by Kevin; private source files remain outside this repository.
-- `favicon.svg` and `favicon.ico`: cyan DNA helix on a dark circular background, with vector and 16/32/48px fallback versions. The original icon is preserved in `images/favicon-original.ico` for the later archive pass.
-- The two teaching PDFs retain their existing assets and URLs.
+- `favicon.svg` and `favicon.ico`: cyan DNA helix on a dark circular background, with vector and 16/32/48px fallback versions. The original icon is preserved in `archive/legacy-site/images/favicon-original.ico`.
+- The two teaching PDFs are preserved in `archive/legacy-site/teaching/`; their former root paths are retired.
 - `CNAME`: existing custom domain, `kevinrychel.com`.
 - `AGENTS.md`: instructions for working with Codex in this repository.
-- `COPY_REVIEW.md`: editable snapshot of page copy, link labels, captions, and layout notes. Changes are applied manually to the HTML in a later review pass.
+- `notes/COPY_REVIEW.md`: editable snapshot of page copy, link labels, captions, and layout notes. Changes are applied manually to the HTML in a later review pass.
+- `notes/Redesign_ideas.md`: the longer-term website vision, retained for future development.
 - `scripts/preview_phone.py` and `.vscode/tasks.json`: public-asset Wi-Fi preview and its VS Code task, using Python’s standard library.
 - `scripts/export_images.swift`: optional macOS image-export utility; the website serves the already-exported assets without running it.
 - `scripts/export_favicon.swift`: optional native macOS exporter for the matching SVG/ICO favicon. Run `swift scripts/export_favicon.swift` from the repository root; no website build step is needed.
@@ -59,6 +51,8 @@ The existing desktop preview on port 8000 can stay running. `127.0.0.1` is local
 Before publishing, check the page at mobile and desktop widths, navigate links and controls with the keyboard, and verify local assets and outbound links. Run `git diff --check` for whitespace errors. There is currently no automated test suite or production build command.
 
 The site uses GitHub Pages. Confirm the publishing source in the repository's **Settings → Pages** before changing deployment behavior; those account settings are not represented in this clone. Preserve `CNAME` when introducing any future build output.
+
+Kevin confirmed on October 7, 2026 that Pages uses **Deploy from a branch → main → /(root)**. Commit changes, push the feature branch, and merge a pull request into `main`; GitHub Pages then publishes the updated remote branch. A merge performed only on this Mac needs a subsequent push to `origin/main`. Check the Pages workflow in **Actions** after merging. The public GitHub API also confirms Pages is enabled and `main` is the default branch. See [GitHub’s publishing-source guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 Keep private career notes and application materials outside this public repository.
 
@@ -74,9 +68,9 @@ The final polish adds periods to every page heading and a short, horizontal RNAs
 
 ### Image exports
 
-The supplied `new_images/hd_colorectal_carcinoma.png` is an 18,415×15,184-pixel, approximately 494 MB master. The new headshot, `new_images/hd_kevinrychelpenn_dec2025_headshot.jpg`, is 9,000×5,803 pixels. Both remain local and are excluded from Git and the phone preview. They are not page assets.
+The supplied `images/masters/hd_colorectal_carcinoma.png` is an 18,415×15,184-pixel, approximately 494 MB master. The new headshot, `images/masters/hd_kevinrychelpenn_dec2025_headshot.jpg`, is 9,000×5,803 pixels. Both remain local and are excluded from Git and the phone preview. They are not page assets. Each export is written into `images/<family>/<family>-<width>.<extension>`.
 
-The page uses AVIF with JPEG fallbacks and responsive image sizes. Each of the two microscopy banners has separate desktop and mobile crop families: a wide opening view of mixed orange, blue, and yellow tissue, and a lower-right view with cyan tissue at the left edge and pink cells among the orange and blue structures. Desktop crops are approximately 6:1 and mobile crops are 2:1. The second banner loads lazily. Cropping, resizing, and compression preserve the supplied image content; no detail is generated or retouched. Exports use sRGB and omit the source EXIF/GPS metadata. The previous square tissue-detail exports remain preserved but are no longer used on the page.
+The page uses AVIF with JPEG fallbacks and responsive image sizes. Each of the two microscopy banners has separate desktop and mobile crop families: a wide opening view of mixed orange, blue, and yellow tissue, and a lower-right view with cyan tissue at the left edge and pink cells among the orange and blue structures. Desktop crops are approximately 6:1 and mobile crops are 2:1. The second banner loads lazily. Cropping, resizing, and compression preserve the supplied image content; no detail is generated or retouched. Exports use sRGB and omit the source EXIF/GPS metadata. Unused square tissue crops and superseded low-resolution source JPEGs have been removed; the active JPEG fallbacks remain.
 
 To reproduce exports on this Mac with the installed Swift command-line tools (Apple Swift 6.3.3) and native AVIF encoder:
 
@@ -103,7 +97,7 @@ This optional preparation step is macOS-specific, has no package dependencies, a
 
 Keep master files out of deployment assets if introducing a build or packaging step later.
 
-Legacy assets are retained during review. The old homepage remains recoverable from Git history; no publicly browsable archive is needed. Existing `#about`, `#phd`, and `#personal` anchors still resolve.
+Legacy assets are retained in the tracked `archive/` folder. The old homepage remains recoverable from Git history. Responsive images now live in family folders under `images/`; page references, the sharing-image URL, the exporter, and the preview allowlist use those paths. At Kevin’s request, the teaching PDFs are archived and their former root URLs will be retired when this cleanup is deployed; archived images likewise move to new paths. Existing `#about`, `#phd`, and `#personal` anchors still resolve. This reorganization does not change the GitHub Pages publishing configuration. The archive is excluded from the phone preview; it remains part of the root publishing source unless a deployment exclusion is configured.
 
 ### Draft verification — October 5, 2026
 
