@@ -1,7 +1,7 @@
 # KevinRychel.com
 This is the source code for KevinRychel.com, Kevin Rychel-Penn’s professional portfolio in computational biology, spatial biology, multi-omics, quantitative imaging, and scientific software.
 
-Visit the site at [KevinRychel.com](https://www.kevinrychel.com)
+Visit the site at [KevinRychel.com](https://kevinrychel.com/)
 
 ## Preview on Mac and iPhone
 
@@ -56,7 +56,7 @@ Kevin confirmed on October 7, 2026 that Pages uses **Deploy from a branch → ma
 
 Keep private career notes and application materials outside this public repository.
 
-## Current local draft
+## Current landing page
 
 The October 2026 draft is a single complete landing page with selected work, four first-author publications, a personal introduction, and contact links. Plain CSS replaces the old Bootstrap and Font Awesome dependencies, and system fonts avoid a remote font dependency. Existing Google Analytics is retained for the public hostname.
 
@@ -97,7 +97,15 @@ This optional preparation step is macOS-specific, has no package dependencies, a
 
 Keep master files out of deployment assets if introducing a build or packaging step later.
 
-Legacy assets are retained in the tracked `archive/` folder. The old homepage remains recoverable from Git history. Responsive images now live in family folders under `images/`; page references, the sharing-image URL, the exporter, and the preview allowlist use those paths. At Kevin’s request, the teaching PDFs are archived and their former root URLs will be retired when this cleanup is deployed; archived images likewise move to new paths. Existing `#about`, `#phd`, and `#personal` anchors still resolve. This reorganization does not change the GitHub Pages publishing configuration. The archive is excluded from the phone preview; it remains part of the root publishing source unless a deployment exclusion is configured.
+Legacy assets are retained in the tracked `archive/` folder. The old homepage remains recoverable from Git history. Responsive images now live in family folders under `images/`; page references, the sharing-image URL, the exporter, and the preview allowlist use those paths. At Kevin’s request, the teaching PDFs are archived and their former root URLs are retired; archived images likewise moved to new paths. Existing `#about`, `#phd`, and `#personal` anchors still resolve. This reorganization does not change the GitHub Pages publishing configuration. The archive is excluded from the phone preview; it remains part of the root publishing source unless a deployment exclusion is configured.
+
+### Live release verification — October 7, 2026
+
+- Kevin merged pull request #1 into `main` as `d7377cc`; the [GitHub Pages build and deployment succeeded](https://github.com/kevin-rychel/personal_website/actions/runs/37586315698).
+- The live homepage and all 34 public files match the released local files byte for byte. The résumé serves as a PDF, and all AVIF variants use the correct image content type.
+- `https://kevinrychel.com/` works, and HTTP redirects to HTTPS. The `www.kevinrychel.com` variant returns NXDOMAIN from both Cloudflare and Google public DNS. Share the working address above; optionally add a DNS `CNAME` for `www` pointing to `kevin-rychel.github.io` to enable GitHub Pages’ redirect. See [GitHub’s custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain-and-the-www-subdomain-variant).
+- Existing analytics configuration is deployed; actual event receipt can be checked in Google Analytics. Enhanced measurement and résumé download tracking remain deferred.
+- These release checks used the command line; earlier browser validation is recorded below.
 
 ### Draft verification — October 5, 2026
 
