@@ -16,7 +16,6 @@
     <text x="636" y="158" fill="#eff1ec" font-size="36" font-weight="600" letter-spacing="1">DUSK</text>
     <text x="76" y="448" fill="#c1c8c4" font-size="26">Guided workflows</text>
     <text x="636" y="448" fill="#c1c8c4" font-size="26">Cohort insights</text>
-    <text x="490" y="212" fill="#c1c8c4" font-size="24" text-anchor="middle">Visual checkpoint</text>
   </g>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M119 243C150 243 142 297 177 297M119 297H177M119 351C150 351 142 297 177 297" stroke="#80d7cd" stroke-opacity=".46" stroke-width="2"/>
@@ -35,10 +34,10 @@
     <circle cx="670" cy="280" r="7"/><circle cx="684" cy="263" r="7"/><circle cx="683" cy="310" r="7"/><circle cx="665" cy="326" r="7"/><circle cx="680" cy="343" r="7"/>
   </g>
   <g fill="#d9b884">
-    <circle cx="754" cy="241" r="7"/><circle cx="770" cy="257" r="7"/><circle cx="754" cy="278" r="7"/><circle cx="766" cy="297" r="7"/><circle cx="751" cy="317" r="7"/>
+    <circle cx="754" cy="207" r="7"/><circle cx="770" cy="231" r="7"/><circle cx="754" cy="255" r="7"/><circle cx="766" cy="279" r="7"/><circle cx="751" cy="307" r="7"/>
   </g>
   <g fill="#b6a5d5">
-    <circle cx="839" cy="274" r="7"/><circle cx="854" cy="291" r="7"/><circle cx="837" cy="310" r="7"/><circle cx="854" cy="330" r="7"/><circle cx="842" cy="353" r="7"/>
+    <circle cx="839" cy="325" r="7"/><circle cx="854" cy="336" r="7"/><circle cx="837" cy="347" r="7"/><circle cx="854" cy="356" r="7"/><circle cx="842" cy="368" r="7"/>
   </g>
   <g fill="#eff1ec" fill-opacity=".25">
     <circle cx="211" cy="363" r="3"/><circle cx="325" cy="363" r="3"/><circle cx="490" cy="363" r="3"/>
